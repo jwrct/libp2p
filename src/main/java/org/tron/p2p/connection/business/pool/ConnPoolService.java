@@ -76,7 +76,7 @@ public class ConnPoolService extends P2pEventHandler {
       } catch (Exception t) {
         log.error("Exception in poolLoopExecutor worker", t);
       }
-    }, 200, 3600, TimeUnit.MILLISECONDS);
+    }, 200, 65000, TimeUnit.MILLISECONDS);
 
     if (p2pConfig.isDisconnectionPolicyEnable()) {
       disconnectExecutor.scheduleWithFixedDelay(() -> {
